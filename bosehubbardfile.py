@@ -125,8 +125,8 @@ class BoseHubbardModel:
         w = np.zeros((4, 4, self.d, self.d), dtype="float")
         w[0, 0,:, :] = w[3, 3, :, :] = np.eye(self.d, self.d)
         w[0, 1, :, :] = -self.t * self.init_creation_op()
-        w[0, 2, :, :] = self.init_annihilation_op()
-        w[1, 3, :, :] = -self.t * self.init_annihilation_op()
+        w[0, 2, :, :] = -self.t * self.init_annihilation_op()
+        w[1, 3, :, :] = self.init_annihilation_op()
         w[2, 3, :, :] = self.init_creation_op()
         w[0, 3, :, :] = (self.U/2) * self.init_number_op()**2 - (((self.U/2) + self.mu) * self.init_number_op())
         for site in range(self.L):
@@ -146,8 +146,8 @@ class BoseHubbardModel:
         w = np.zeros((4, 4, self.d, self.d), dtype="float")
         w[0, 0,:, :] = w[3, 3, :, :] = np.eye(self.d, self.d)
         w[0, 1, :, :] = -self.t * self.init_creation_op()
-        w[0, 2, :, :] = self.init_annihilation_op()
-        w[1, 3, :, :] = -self.t * self.init_annihilation_op()
+        w[0, 2, :, :] = -self.t * self.init_annihilation_op()
+        w[1, 3, :, :] = self.init_annihilation_op()
         w[2, 3, :, :] = self.init_creation_op()
         w[0, 3, :, :] = (self.U/2) * self.init_number_op()**2 - (((self.U/2) + self.mu) * self.init_number_op())
         for site in range(self.L):
